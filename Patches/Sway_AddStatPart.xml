@@ -1,0 +1,20 @@
+<Patch>
+  <!-- Add our StatPart to the SwayFactor stat (from CE). -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName="SwayFactor"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="SwayFactor"]/parts</xpath>
+      <value>
+        <li Class="TSA.CE.SkillAffectsSway.StatPart_ShootingSway" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="SwayFactor"]</xpath>
+      <value>
+        <parts>
+          <li Class="TSA.CE.SkillAffectsSway.StatPart_ShootingSway" />
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>
